@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    background: linear-gradient(to left, #FF6F61, #6E8B9E);
+    background-size: 200% auto;
+    animation: changeBackgroundColor 5s infinite;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari on iOS */
+    -ms-text-size-adjust: 100%; /* Prevent font scaling in IE Mobile */
+}
+
+html {
+    font-size: 16px; /* Set a base font-size for consistency */
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari on iOS */
+    -ms-text-size-adjust: 100%; /* Prevent font scaling in IE Mobile */
+}
+
+.background-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 2s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+#adminImage {
+    width: 65px;
+    height: 62px;
+    border-radius: 50%;
+}
+
+.container {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+    max-width:max-content;
+    width: 95%;
+    text-align: center;
+    display: none;
+    position: relative;
+    z-index: 3;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+.image-link {
+    outline: none;
+}
+
+.image-link img {
+    border: none;
+    outline: none;
+}
+
+.image-link:focus {
+    outline: none;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #666;
+}
+
+input {
+    width: calc(100% - 0.8em);
+    padding: 0.75em;
+    border: 2px solid #ddd;
+    border-radius: 17px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+    outline: none;
+}
+
+button {
+    width: calc(100% - 1.5em);
+    padding: 0.75em;
+    background: #2575fc;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: #6a11cb;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background: #4e0aaf;
+}
+
+.not-mobile {
+    margin-top: 150%;
+    width: 100%;
+    text-align: center;
+    font-size: 0.5em;
+    color: white;
+}
+
+.not-mobile p {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.popup-header {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.popup-header span {
+    font-size: 12px;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2575fc;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2575fc;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-content button:hover {
+    background: #6a11cb;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: none;
+    }
+}
+@keyframes changeBackgroundColor {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
